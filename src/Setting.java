@@ -1,4 +1,4 @@
-
+// setting enum contains all code for settings
 public enum Setting {
 	OFF("---"),
 	LOW("--+"),
@@ -7,7 +7,7 @@ public enum Setting {
 	
 	private String display;
 	
-	Setting(String display){
+	Setting(String display) {
 		this.display = display;
 	}
 	

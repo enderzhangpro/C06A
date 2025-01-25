@@ -17,8 +17,7 @@ public class Stove {
 	 * Constructor for the stove
 	 * Set up the burners
 	 */
-	public Stove() 
-	{
+	public Stove() {
 		burners = new ArrayList<Burner>();	
 		for (int i=0; i<NUM_BURNERS; i++)
 			burners.add(new Burner());
@@ -34,7 +33,7 @@ public class Stove {
 		
 		for (Burner burner: burners) {
 			burner.display();
-			if (burner.getMyTemperature().equals(Temperature.BLAZING)) {
+			if (burner.getMyTemperature().equals(Temperature.BLAZING)) { // check if warning is needed
 				alert = true;
 			}
 		}
@@ -103,7 +102,7 @@ public class Stove {
 		Stove stove = new Stove();
 		
 		System.out.println("Beginning stove state ");
-		// trun the burners up
+		// turn the burners up
 		stove.displayStove();
 		stove.turnBurnersUp();
 		stove.timePassing(6);
@@ -127,5 +126,4 @@ public class Stove {
 		System.out.println("\nStove in final state ");
 		stove.displayStove();	
 	}
-
 }

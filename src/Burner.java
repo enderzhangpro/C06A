@@ -1,6 +1,3 @@
-
-
-
 public class Burner {
 	private Temperature myTemperature;
 	private Setting mySetting;
@@ -8,7 +5,6 @@ public class Burner {
 	public static final int TIME_DURATION = 2;
 
 	public Burner() {
-		// TODO Auto-generated constructor stub
 		super();
 		myTemperature = Temperature.COLD;
 		mySetting = Setting.OFF;
@@ -19,6 +15,7 @@ public class Burner {
 		return myTemperature;
 	}
 	
+	// increase the temperature setting
 	public void plusButton() {
 		switch (mySetting) {
 			case OFF:
@@ -33,9 +30,10 @@ public class Burner {
 			case HIGH:
 				break;
 		}
-		timer = TIME_DURATION;
+		timer = TIME_DURATION; // reset the timer whenever the time is changed
 	}
 	
+	// decrease the temperature setting
 	public void minusButton() {
 		switch (mySetting) {
 			case HIGH:
@@ -50,9 +48,10 @@ public class Burner {
 			case OFF:
 				break;
 		}
-		timer = TIME_DURATION;
+		timer = TIME_DURATION; // reset the timer whenever the time is changed
 	}
 	
+	// update the temperature and change the temperature if the timer hits zero
 	public void updateTemperature() {
 		if (timer > 0) {
 			timer--;
@@ -76,7 +75,6 @@ public class Burner {
 	}
 	
 	public void display() {
-		System.out.println(mySetting + "....." + myTemperature);
-	}
-	
+		System.out.println("[" + mySetting + "]....." + myTemperature);
+	}	
 }
